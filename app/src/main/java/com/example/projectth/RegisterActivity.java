@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                             edtUsername.getText().toString());
                     intent.putExtra("password",
                             edtPassword.getText().toString());
-                    setResult(101, intent);
+                    setResult(100, intent);
                     finish();
                 }else {
                     edtPassword.setError("Password and confirm password does not match");

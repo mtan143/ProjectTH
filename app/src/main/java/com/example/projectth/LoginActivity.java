@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
             new ActivityResultCallback<ActivityResult>() {
                 @Override
                 public void onActivityResult(ActivityResult result) {
-                    if(result.getResultCode() == Activity.RESULT_OK)
+                    if(result.getResultCode() == 100)
                     {
                         Intent data = result.getData();
                         edtUsername.setText(data.getStringExtra("username"));
