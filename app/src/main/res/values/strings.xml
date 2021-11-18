@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProjectTH</string>
+    <string name="furniture">FURNITURE</string>
+    <string name="welcome_to">WELCOME TO</string>
 </resources>
