@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/drawable/fragment_home.xml" value="0.15462962962962962" />
+        <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/drawable/ic_account_box_24dp.xml" value="0.15" />
         <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/layout/activity_furniture_detail.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/layout/activity_info.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/layout/bottom_nav_view.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/layout/dialog_cutom.xml" value="0.1" />
         <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/layout/fragment_account.xml" value="0.5240641711229946" />
         <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/layout/fragment_categories.xml" value="0.1" />
         <entry key="..\:/Users/DELL/code/ProjectTH/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />

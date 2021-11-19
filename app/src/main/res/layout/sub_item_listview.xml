@@ -42,6 +42,6 @@
                 android:text="Nội dung của bài viết bảo gồm hình ảnh và các công cụ thực hiện các thông tin cho bài viết"
                 android:id="@+id/tvDesc"/>
         </LinearLayout>
-    </LinearLayout>>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
