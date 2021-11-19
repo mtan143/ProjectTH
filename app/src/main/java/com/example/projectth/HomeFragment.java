@@ -19,6 +19,7 @@ public class HomeFragment extends Fragment {
     ListView listView;
     ArrayList<Furniture> arrayList;
     FurnitureAdapter furnitureAdapter;
+    Utils utils;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -30,6 +31,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 // Inflate the layout for this fragment
+        utils = new Utils(getContext());
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
     @Override
@@ -37,7 +39,7 @@ public class HomeFragment extends Fragment {
     {
         super.onViewCreated(view, savedInstanceState);
         listView = view.findViewById(R.id.listView);
-        arrayList = getMockDataDrawable(); // thay the bang cai moi
+        arrayList = utils.getMockData(); // thay the bang cai moi
         furnitureAdapter = new FurnitureAdapter(getContext(),arrayList); // tự thêm cho đúng
         listView.setAdapter(furnitureAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
