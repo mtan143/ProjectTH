@@ -13,12 +13,22 @@ public class Furniture implements Serializable {
     String name;
     String description;
     Bitmap image;
+    String image1;
     int intImage;
     String strImg;
+    Categories categories;
+    int id;
     public Furniture(String name, String description, Bitmap image) {
         this.name = name;
         this.description = description;
         this.image = image;
+    }
+    public Furniture(String name, String description, String image, Categories categories, int id) {
+        this.name = name;
+        this.description = description;
+        this.image1 = image;
+        this.categories = categories;
+        this.id = id;
     }
 
     public Furniture(String name, String description, int image) {
@@ -29,7 +39,7 @@ public class Furniture implements Serializable {
     public Furniture(String name, String description, String image) {
         this.name = name;
         this.description = description;
-        this.strImg = image;
+        this.image1 = image;
     }
     public String getName() {
         return name;
@@ -49,6 +59,23 @@ public class Furniture implements Serializable {
     public void setImage(Bitmap image) {
         this.image = image;
     }
+
+    public Categories getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Categories categories) {
+        this.categories = categories;
+    }
+
+    public String getImage1() {
+        return image1;
+    }
+
+    public void setImage1(String image1) {
+        this.image1 = image1;
+    }
+
     public static Bitmap convertStringToBitmapFromAccess(Context context, String
             filename){
         AssetManager assetManager = context.getAssets();
@@ -61,5 +88,4 @@ public class Furniture implements Serializable {
         }
         return null;
     }
-
 }

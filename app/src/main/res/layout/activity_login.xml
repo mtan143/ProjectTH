@@ -27,7 +27,7 @@
         android:textAppearance="@style/furniture" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/name"
         android:layout_width="341dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/furniture"
@@ -42,14 +42,14 @@
         android:inputType="textPersonName"
         android:padding="18dp"
         android:textAllCaps="false"
-        android:textColorHint="@android:color/holo_red_light"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textColorHint="@android:color/holo_red_light" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/password"
         android:layout_width="341dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/name"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -68,7 +68,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="341dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
         android:backgroundTint="#E23C3C"
