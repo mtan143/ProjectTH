@@ -20,9 +20,10 @@ public class CategoriesFragment extends Fragment {
     ArrayList<Furniture> arrayList;
     FurnitureAdapter furnitureAdapter;
     Utils utils;
+
     public CategoriesFragment() {
-// Required empty public constructor
     }
+
     public static CategoriesFragment newInstance(int pos) {
 // Required empty public constructor
         Bundle bundle = new Bundle();
@@ -31,22 +32,26 @@ public class CategoriesFragment extends Fragment {
         categoriesFragment.setArguments(bundle);
         return categoriesFragment;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-// Inflate the layout for this fragment
+        // Inflate the layout for this fragment
         utils = new Utils(getContext());
         return inflater.inflate(R.layout.fragment_categories, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle
             savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Bundle bundle = getArguments();
+
         listView = view.findViewById(R.id.listView);
         arrayList = utils.getFurnitureFromCategories(bundle.getInt("category"));
         furnitureAdapter = new FurnitureAdapter(getContext(),arrayList);
         listView.setAdapter(furnitureAdapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i,

@@ -19,49 +19,41 @@ import java.util.ArrayList;
 public class Utils {
 
     Context context;
+    static String filename="database";
+    static ArrayList<Furniture> furnitureHistory = new ArrayList<>();
+
     public Utils(Context context) {
         this.context = context;
     }
-    static String filename="database";
-    static ArrayList<Furniture> furnitureHistory = new ArrayList<>();
-    public void addFurintureHistorry(Furniture furniture) {
-        if(furnitureHistory.indexOf(furniture) > 0) {
-            this.furnitureHistory.add(0, furniture);
-        }
-    }
-    public ArrayList<Furniture> getFurnitureHistory(){ return
-            this.furnitureHistory; }
+
+    public ArrayList<Furniture> getFurnitureHistory() { return furnitureHistory; }
+
     public void WriteToFileInternal(ArrayList<Furniture> arrayList){
+
         try {
             File file = new File(context.getFilesDir(), filename);
             FileOutputStream fileOutputStream = new FileOutputStream(file);
-            ObjectOutputStream objectOutputStream = new
-                    ObjectOutputStream(fileOutputStream);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(arrayList);
             objectOutputStream.close();
             fileOutputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     public ArrayList<Furniture> LoadFileInternal(){
-        ArrayList<Furniture> arrayList = new ArrayList<>();
+
+        ArrayList<Furniture> arrayList;
+
         try {
             File file = new File(context.getFilesDir(), filename);
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new
                     ObjectInputStream(fileInputStream);
-            arrayList = (ArrayList<Furniture>)
-                    objectInputStream.readObject();
+            arrayList = (ArrayList<Furniture>) objectInputStream.readObject();
             Log.d("FurnitureApp", arrayList.size()+"");
             return arrayList;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return null;
@@ -101,6 +93,7 @@ public class Utils {
         }
         return null;
     }
+
     public ArrayList<Categories> getMockDataCategories(){
         ArrayList<Categories> tmp = new ArrayList<>();
         tmp.add(new Categories("BedRoom", "bed_room.png"));

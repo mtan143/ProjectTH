@@ -3,13 +3,9 @@ package com.example.projectth;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.ActivityResultRegistry;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -76,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         else
                         {
-                            Boolean checkuserpass=DB.checkusernamepassword(user,pass);
+                            Boolean checkuserpass=DB.checkUsernamePassword(user,pass);
                             if(checkuserpass==true)
                             {
                                 Toast.makeText(LoginActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();

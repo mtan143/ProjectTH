@@ -1,5 +1,6 @@
 package com.example.projectth;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,15 +12,16 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class FurnitureAdapter extends BaseAdapter {
+
     LayoutInflater inflater;
     TextView tvName;
     TextView tvDescription;
-    ImageView imvLogo;
+    ImageView imgLogo;
     Context context;
     ArrayList<Furniture> arrayList;
+
     public FurnitureAdapter(Context context, ArrayList<Furniture> list) {
         arrayList = list;
-        // arraylist chưa có
         inflater = LayoutInflater.from(context);
         this.context = context;
     }
@@ -39,19 +41,18 @@ public class FurnitureAdapter extends BaseAdapter {
         return 0;
     }
 
-
-
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
-        View view = inflater.inflate(R.layout.sub_item_listview, null);
-        // Thiết lập thông tin hiển thị
-        tvName = (TextView) view.findViewById(R.id.tvName);
-        tvDescription = (TextView) view.findViewById(R.id.tvDesc);
+
+        @SuppressLint("ViewHolder") View view = inflater.inflate(R.layout.sub_item_listview, null);
+
+        tvName = view.findViewById(R.id.tvName);
+        tvDescription = view.findViewById(R.id.tvDesc);
         tvName.setText(arrayList.get(i).name);
         tvDescription.setText(arrayList.get(i).description);
-        imvLogo = view.findViewById(R.id.imHinh);
-        //    imvLogo.setImageBitmap(arrayList.get(i).image);
-        imvLogo.setImageResource(arrayList.get(i).intImage);
+        imgLogo = view.findViewById(R.id.imgHinh);
+        //    imgLogo.setImageBitmap(arrayList.get(i).image);
+        imgLogo.setImageResource(arrayList.get(i).intImage);
         return view;
     }
 

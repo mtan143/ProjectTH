@@ -14,10 +14,6 @@ public class Categories {
     ArrayList<Furniture> arrayList;
     Bitmap image;
     String image1;
-    public Categories(String name, ArrayList<Furniture> arrayList) {
-        this.name = name;
-        this.arrayList = arrayList;
-    }
 
     public Categories(String name, String img) {
         this.name = name;
@@ -31,24 +27,30 @@ public class Categories {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public ArrayList<Furniture> getArrayList() {
         return arrayList;
     }
+
     public void setArrayList(ArrayList<Furniture> arrayList) {
         this.arrayList = arrayList;
     }
+
     public Bitmap getImage() {
         return image;
     }
+
     public void setImage(Bitmap image) {
         this.image = image;
     }
-    public static Bitmap convertStringToBitmapFromAccess(Context context, String
-            filename){
+
+    public static Bitmap convertStringToBitmapFromAccess(Context context, String filename){
         AssetManager assetManager = context.getAssets();
+
         try {
             InputStream is = assetManager.open(filename);
             Bitmap bitmap = BitmapFactory.decodeStream(is);
@@ -56,6 +58,7 @@ public class Categories {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return null;
     }
 }

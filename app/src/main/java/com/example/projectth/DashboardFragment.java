@@ -1,11 +1,13 @@
 package com.example.projectth;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,27 +15,25 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class DashboardFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     GridView gridView;
-    ArrayList<Categories> arrayList;
+    List<Categories> arrayList;
     FurnitureAdapterGrid furnitureAdapterGrid;
     Utils utils;
 
     public DashboardFragment() {
         // Required empty public constructor
-    }
-
-
-
-
-    public static DashboardFragment newInstance(String param1, String param2) {
-        DashboardFragment fragment = new DashboardFragment();
-
-        return fragment;
     }
 
     @Override
@@ -65,21 +65,5 @@ public class DashboardFragment extends Fragment {
         // Inflate the layout for this fragment
         utils = new Utils(getContext());
         return inflater.inflate(R.layout.fragment_dashboard, container, false);
-    }
-    public ArrayList<Categories> getMockData(){
-        ArrayList<Furniture> arrayListBed = new ArrayList<>();
-        ArrayList<Furniture> arrayListLiving = new ArrayList<>();
-        ArrayList<Furniture> arrayListMeeting = new ArrayList<>();
-        ArrayList<Furniture> arrayListAccessories = new ArrayList<>();
-        ArrayList<Categories> tmp = new ArrayList<>();
-        tmp.add(new Categories("BedRoom", arrayListBed,
-                Categories.convertStringToBitmapFromAccess(getContext(), "bed_room.png")));
-        tmp.add(new Categories("LivingRoom", arrayListLiving,
-                Categories.convertStringToBitmapFromAccess(getContext(), "living_room.png")));
-        tmp.add(new Categories("MeetingRoom", arrayListMeeting,
-                Categories.convertStringToBitmapFromAccess(getContext(), "meeting_room.png")));
-        tmp.add(new Categories("Accessories", arrayListAccessories,
-                Categories.convertStringToBitmapFromAccess(getContext(), "accessories.png")));
-        return tmp;
     }
 }

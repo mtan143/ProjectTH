@@ -9,33 +9,36 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.regex.Pattern;
-
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText  usname, pass, repass;
+    EditText username, pass, repass;
     Button btnSignIn, btnCancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        usname = findViewById(R.id.editText1);
+
+        username = findViewById(R.id.editText1);
         pass = findViewById(R.id.editText2);
         repass = findViewById(R.id.editText3);
         btnSignIn = findViewById(R.id.btnLogin);
         btnCancel = findViewById(R.id.btnCancel);
+
         DBHelper DB=new DBHelper(this);
+
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(usname.getText().toString().isEmpty()){
-                    usname.setError("Username cannot be null ");
+                if(username.getText().toString().isEmpty()){
+                    username.setError("Username cannot be null ");
                     return;
                 }
                 if(pass.getText().toString().isEmpty()){
@@ -50,21 +53,21 @@ public class RegisterActivity extends AppCompatActivity {
                     repass.setError("Password required");
                     return;
                 }
-                String user = usname.getText().toString();
+                String user = username.getText().toString();
                 String passw=pass.getText().toString();
                 String repassw=repass.getText().toString();
 
                 if(user.equals("")||passw.equals("")||repassw.equals(""))
-                    Toast.makeText(RegisterActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-                else
                 {
+                    Toast.makeText(RegisterActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                } else {
                     if (passw.equals(repassw))
                     {
-                        Boolean checkuser=DB.checkusername(user);
-                        if (checkuser==false)
+                        Boolean checkUser=DB.checkUsername(user);
+                        if (!checkUser)
                         {
-                            Boolean insert = DB.inserData(user,passw);
-                            if (insert==true)
+                            Boolean insert = DB.insertData(user,passw);
+                            if (insert)
                             {
                                 Toast.makeText(RegisterActivity.this, "Successful", Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(getApplicationContext(),MainActivity.class);
@@ -72,10 +75,10 @@ public class RegisterActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                             else
-                                Toast.makeText(RegisterActivity.this, "Failled", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                         }
                         else
-                            Toast.makeText(RegisterActivity.this, "the account have exist", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "The account have exist", Toast.LENGTH_SHORT).show();
                     }
                     else
                         Toast.makeText(RegisterActivity.this, "Passwords not matching", Toast.LENGTH_SHORT).show();

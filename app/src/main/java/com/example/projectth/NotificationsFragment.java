@@ -23,26 +23,30 @@ public class NotificationsFragment extends Fragment {
         // Required empty public constructor
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_notifications, container, false);
     }
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
+
         listView = view.findViewById(R.id.listView);
+
         Utils utils = new Utils(getContext());
+
         arrayList = utils.getFurnitureHistory();
-        furnitureAdapter = new FurnitureAdapter(getContext(),arrayList); // tự thêm cho đúng
+
+        furnitureAdapter = new FurnitureAdapter(getContext(),arrayList);
+
         listView.setAdapter(furnitureAdapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long
-                    l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Utils.furnitureHistory.add(arrayList.get(i));
             }
         });

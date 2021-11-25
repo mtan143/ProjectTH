@@ -15,21 +15,9 @@ public class Furniture implements Serializable {
     Bitmap image;
     String image1;
     int intImage;
-    String strImg;
     Categories categories;
+    int categoryID;
     int id;
-    public Furniture(String name, String description, Bitmap image) {
-        this.name = name;
-        this.description = description;
-        this.image = image;
-    }
-    public Furniture(String name, String description, String image, Categories categories, int id) {
-        this.name = name;
-        this.description = description;
-        this.image1 = image;
-        this.categories = categories;
-        this.id = id;
-    }
 
     public Furniture(String name, String description, int image) {
         this.name = name;
@@ -44,20 +32,41 @@ public class Furniture implements Serializable {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
     public Bitmap getImage() {
         return image;
     }
+
     public void setImage(Bitmap image) {
         this.image = image;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getCategoriesID() {
+        return categoryID;
+    }
+
+    public void setCategoriesID(int categoryId) {
+        this.categoryID = categoryId;
     }
 
     public Categories getCategories() {
@@ -76,8 +85,7 @@ public class Furniture implements Serializable {
         this.image1 = image1;
     }
 
-    public static Bitmap convertStringToBitmapFromAccess(Context context, String
-            filename){
+    public static Bitmap convertStringToBitmapFromAccess(Context context, String filename){
         AssetManager assetManager = context.getAssets();
         try {
             InputStream is = assetManager.open(filename);

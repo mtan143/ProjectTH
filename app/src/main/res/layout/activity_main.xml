@@ -32,13 +32,6 @@
                 android:drawableLeft="@drawable/ic_baseline_search_24"
                 android:hint="Name, description"
                 android:padding="8dp" />
-
-<!--            <include-->
-<!--                android:id="@+id/layouttitle"-->
-<!--                layout="@layout/layout_title"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:visibility="gone" />-->
         </LinearLayout>
     </RelativeLayout>
 
@@ -65,5 +58,6 @@
         app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative" />
 </androidx.constraintlayout.widget.ConstraintLayout>
