@@ -3,16 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/hinh_8"
     tools:context=".LoginActivity">
+
     <TextView
         android:id="@+id/welcome_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp"
         android:gravity="center_horizontal|top"
-        android:text="@string/make_your"
+        android:text="@string/welcome_to"
         android:textAppearance="@style/welcome_to" />
 
     <TextView
@@ -23,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
         android:gravity="center_horizontal|top"
-        android:text="@string/own_world"
+        android:text="@string/furniture"
         android:textAppearance="@style/furniture" />
 
     <EditText
