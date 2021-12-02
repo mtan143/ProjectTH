@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
     ListView listView;
     ArrayList<Furniture> arrayList;
-    FurnitureAdapter furnitureAdapter;
+    HomeAdapter furnitureAdapter;
     Utils utils;
 
     public HomeFragment() {
@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         listView = view.findViewById(R.id.listView);
         arrayList = utils.getMockData();
-        furnitureAdapter = new FurnitureAdapter(getContext(),arrayList);
+        furnitureAdapter = new HomeAdapter(getContext(),arrayList);
         listView.setAdapter(furnitureAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,33 +67,6 @@ public class HomeFragment extends Fragment {
             }
         });
     }
-
-//    public void getAPIFuniture () {
-//        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-//        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-//                "https://raw.githubusercontent.com/ltbaotran/api/main/furniture", null,
-//                response -> {
-//                    try {
-//                        JSONArray jsonArray = response.getJSONArray("funitures");
-//                        for (int i = 0; i < jsonArray.length(); i++) {
-//                            JSONObject jsonObject = jsonArray.getJSONObject(i);
-//                            Furniture furniture = new Furniture();
-//                            furniture.setId(jsonObject.getInt("furnitureId"));
-//                            furniture.setName(jsonObject.getString("name"));
-//                            furniture.setImage1(jsonObject.getString("image"));
-//                            furniture.setDescription(jsonObject.getString("description"));
-//                            furniture.setCategoriesID(jsonObject.getInt("categoriesId"));
-//                            arrayList.add(furniture);
-//                        }
-//                        furnitureAdapter.notifyDataSetChanged();
-//                        Log.i("APIHelper", String.valueOf(arrayList.size()));
-//                    } catch (JSONException e) {
-//                        System.out.println(e);
-//                    }
-//                }, error -> Log.i("APIHelper", error.getMessage()));
-//        requestQueue.add(jsonObjectRequest);
-//        Log.i("APIHelper", String.valueOf(arrayList.size()));
-//    }
 
     @Override
     public void onPause() {

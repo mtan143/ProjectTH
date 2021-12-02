@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class FurnitureAdapter extends BaseAdapter {
+public class HomeAdapter extends BaseAdapter {
+
 
     LayoutInflater inflater;
     TextView tvName;
@@ -20,7 +21,7 @@ public class FurnitureAdapter extends BaseAdapter {
     Context context;
     ArrayList<Furniture> arrayList;
 
-    public FurnitureAdapter(Context context, ArrayList<Furniture> list) {
+    public HomeAdapter(Context context, ArrayList<Furniture> list) {
         arrayList = list;
         inflater = LayoutInflater.from(context);
         this.context = context;
@@ -51,14 +52,7 @@ public class FurnitureAdapter extends BaseAdapter {
         tvName.setText(arrayList.get(i).name);
         tvDescription.setText(arrayList.get(i).description);
         imgLogo = view.findViewById(R.id.imgHinh);
-//        imgLogo.setImageResource(arrayList.get(i).intImage);
-        try {
-            imgLogo.setImageBitmap(Furniture.convertStringToBitmapFromAccess(context, arrayList.get(i).getImage1()));
-        }
-        catch (Exception e) {
-            System.out.println(e);
-        }
+        imgLogo.setImageResource(arrayList.get(i).intImage);
         return view;
     }
-
 }

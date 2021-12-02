@@ -15,13 +15,24 @@ public class Categories {
     Bitmap image;
     String image1;
 
+    public Categories() {
+    }
+
+    public String getImage1() {
+        return image1;
+    }
+
+    public void setImage1(String image1) {
+        this.image1 = image1;
+    }
+
+
     public Categories(String name, String img) {
         this.name = name;
         this.image1 = img;
     }
-    public Categories(String name, ArrayList<Furniture> arrayList, Bitmap image) {
+    public Categories(String name, Bitmap image) {
         this.name = name;
-        this.arrayList = arrayList;
         this.image = image;
     }
     public String getName() {

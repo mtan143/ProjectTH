@@ -61,25 +61,25 @@ public class Utils {
     public ArrayList<Furniture> getMockData(){
         ArrayList<Furniture> tmp = new ArrayList<>();
         tmp.add(new Furniture(context.getString(R.string.name_product_one),
-                context.getString(R.string.product_one), "hinh_1.png"));
+                context.getString(R.string.product_one), R.drawable.hinh_1));
         tmp.add(new Furniture(context.getString(R.string.name_product_two),
-                context.getString(R.string.product_two), "hinh_2.png"));
+                context.getString(R.string.product_two), R.drawable.hinh_2));
         tmp.add(new Furniture(context.getString(R.string.name_product_three),
-                context.getString(R.string.product_three), "hinh_3.png"));
+                context.getString(R.string.product_three), R.drawable.hinh_2));
         tmp.add(new Furniture(context.getString(R.string.name_product_four),
-                context.getString(R.string.product_four), "hinh_4.png"));
+                context.getString(R.string.product_four), R.drawable.hinh_4));
         tmp.add(new Furniture(context.getString(R.string.name_product_five),
-                context.getString(R.string.product_five), "hinh_5.png"));
+                context.getString(R.string.product_five), R.drawable.hinh_5));
         tmp.add(new Furniture(context.getString(R.string.name_product_one),
-                context.getString(R.string.product_one), "hinh_1.png"));
+                context.getString(R.string.product_one), R.drawable.hinh_1));
         tmp.add(new Furniture(context.getString(R.string.name_product_two),
-                context.getString(R.string.product_two), "hinh_2.png"));
+                context.getString(R.string.product_two), R.drawable.hinh_2));
         tmp.add(new Furniture(context.getString(R.string.name_product_three),
-                context.getString(R.string.product_three), "hinh_3.png"));
+                context.getString(R.string.product_three), R.drawable.hinh_3));
         tmp.add(new Furniture(context.getString(R.string.name_product_four),
-                context.getString(R.string.product_four), "hinh_4.png"));
+                context.getString(R.string.product_four), R.drawable.hinh_4));
         tmp.add(new Furniture(context.getString(R.string.name_product_five),
-                context.getString(R.string.product_five), "hinh_5.png"));
+                context.getString(R.string.product_five), R.drawable.hinh_5));
         return tmp;
     }
     public Bitmap convertStringToBitmapFromAccess(String filename){
@@ -96,9 +96,9 @@ public class Utils {
 
     public ArrayList<Categories> getMockDataCategories(){
         ArrayList<Categories> tmp = new ArrayList<>();
-        tmp.add(new Categories("BedRoom", "bed_room.png"));
-        tmp.add(new Categories("LivingRoom", "living_room.png"));
-        tmp.add(new Categories("MeetingRoom", "meeting_room.png"));
+        tmp.add(new Categories("Bed Room", "bed_room.png"));
+        tmp.add(new Categories("Living Room","living_room.png"));
+        tmp.add(new Categories("Meeting Room","meeting_room.png"));
         tmp.add(new Categories("Accessories", "accessories.png"));
         return tmp;
     }

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         loadFragment(new AccountFragment());
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navView.setSelectedItemId(R.id.navigation_dashboard);
+        navView.setSelectedItemId(R.id.navigation_home);
         edSearch=findViewById(R.id.search_vew);
 
         edSearch.setOnClickListener(new View.OnClickListener() {
@@ -48,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
-                case R.id.navigation_dashboard:
-                    fragment = new DashboardFragment();
-                    loadFragment(fragment);
-                    return true;
                 case R.id.navigation_home:
                     fragment = new HomeFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_dashboard:
+                    fragment = new DashboardFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_notifications:

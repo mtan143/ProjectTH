@@ -50,7 +50,7 @@ public class FurnitureAdapterGrid extends BaseAdapter {
         tvName = view.findViewById(R.id.tvName);
         tvName.setText(arrayList.get(i).name);
         imvCategories = view.findViewById(R.id.imvIcon);
-        imvCategories.setImageBitmap(arrayList.get(i).image);
+        imvCategories.setImageBitmap(Furniture.convertStringToBitmapFromAccess(context, arrayList.get(i).getImage1()));
         return view;
     }
 }

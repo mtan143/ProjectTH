@@ -19,6 +19,9 @@ public class Furniture implements Serializable {
     int categoryID;
     int id;
 
+    public Furniture() {
+    }
+
     public Furniture(String name, String description, int image) {
         this.name = name;
         this.description = description;

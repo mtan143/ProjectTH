@@ -28,7 +28,7 @@ public class FurnitureDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        objFurniture= (Furniture) intent.getSerializableExtra("objFurniture");
+        objFurniture= (Furniture) intent.getSerializableExtra("furniture");
 
         if (objFurniture!= null)
         {

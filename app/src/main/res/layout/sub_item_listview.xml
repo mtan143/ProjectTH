@@ -30,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tiêu đề của nội dung"
                 android:maxLines="2"
+                android:textColor="@color/white"
                 android:ellipsize="end"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -37,6 +38,7 @@
             <TextView
                 android:maxLines="3"
                 android:ellipsize="end"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nội dung của bài viết bảo gồm hình ảnh và các công cụ thực hiện các thông tin cho bài viết"

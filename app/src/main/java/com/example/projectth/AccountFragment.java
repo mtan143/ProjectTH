@@ -1,13 +1,18 @@
 package com.example.projectth;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 public class AccountFragment extends Fragment {
+
+    private Button btnLogOut;
 
     public AccountFragment() {
         // Required empty public constructor
@@ -17,6 +22,19 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_account, container, false);
+        btnLogOut = view.findViewById(R.id.btnLogOut);
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Log Out Successful", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+            }
+        });
+
+        return view;
     }
+
 }
